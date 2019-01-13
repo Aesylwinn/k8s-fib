@@ -14,5 +14,5 @@ docker push kylecooley/fib-worker:$SHA
 # Deploy to k8s cluster
 kubectl apply -f k8s
 kubectl set image deployments/client-deployment client=kylecooley/fib-client:$SHA
-kubectl set image deployments/server-deployment server=kylecooley/fib-server:$SHA
+kubectl set image deployments/server-deployment api=kylecooley/fib-server:$SHA
 kubectl set image deployments/worker-deployment worker=kylecooley/fib-worker:$SHA
