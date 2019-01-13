@@ -11,8 +11,8 @@ before_install:
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
-  - gcloud auth activate-service-account --key-file service-account.json
   - openssl aes-256-cbc -K $encrypted_8acaa5b479ff_key -iv $encrypted_8acaa5b479ff_iv -in service-account.json.enc -out service-account.json -d
+  - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project k8s-fib
   - gcloud config set compute/zone us-central1-a
   - gcloud container clusters get-credentials fib-cluster
